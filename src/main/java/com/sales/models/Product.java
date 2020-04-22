@@ -29,8 +29,10 @@ public class Product {
 	@Min(value=0)
 	private int stocknumber;
 	
-	@OneToMany(mappedBy="prod")
-	private List<Order> ordersForProduct = new ArrayList<Order>();
+	//@OneToMany(mappedBy="prod")
+	//private List<Product> ordersForProduct = new ArrayList<Product>();*/
+
+	//private List<Order> ordersForProduct = new ArrayList<Order>();
 
 	// Getters & setters
 	public Long getNumber() {
@@ -57,12 +59,22 @@ public class Product {
 		this.stocknumber = stocknumber;
 	}
 
-	public List<Order> getOrdersForProduct() {
+/*	public List<Order> getOrdersForProduct() {
 		return ordersForProduct;
 	}
 
 	public void setOrdersForProduct(List<Order> ordersForProduct) {
 		this.ordersForProduct = ordersForProduct;
+	}*/
+	
+	/*public List<Product> getOrdersForProduct() {
+		return ordersForProduct;
 	}
+
+	public void setOrdersForProduct(List<Product> ordersForProduct) {
+		this.ordersForProduct = ordersForProduct;
+	}*/
+	
+	
 
 }
