@@ -20,13 +20,13 @@ public class Customer {
 	@Column(name="number")
 	private Long number;
 
-	@Column(name="name")
+	@Column(name="customername")
 	@NotBlank
-	private String name;
+	private String customername;
 	
-	@OneToMany(mappedBy="cust")
+	/*@OneToMany(mappedBy="cust")
 	private List<Order> orders = new ArrayList<Order>();
-
+*/
 	public Long getNumber() {
 		return number;
 	}
@@ -35,19 +35,19 @@ public class Customer {
 		this.number = number;
 	}
 
-	public String getName() {
-		return name;
+	public String getCustomername() {
+		return customername;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCustomername(String customername) {
+		this.customername = customername;
 	}
 
-	public List<Order> getOrders() {
+	/*public List<Order> getOrders() {
 		return orders;
 	}
 
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
-	}	
+	}*/	
 }
