@@ -19,4 +19,11 @@ public class ProductService {
 		return (ArrayList<Product>) pr.findAll();
 		
 	}
+	
+	public void saveProduct(Product p) {
+		pr.save(p);
+		
+		System.out.printf("Product saved");
+    		
+  	}
 }
