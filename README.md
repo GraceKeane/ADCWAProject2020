@@ -17,8 +17,6 @@ Advanced data centric web applications project 2020. For this project I used Spr
 4) Start project in eclipde IDE
 5) Run ".java" in eclipse console
 6) Navigate to a browser and type "localhost:8081"
-  
-## Referances
-[W3 Schools](https://www.w3schools.com/sql/sql_create_table.asp)
+ 
   
 
