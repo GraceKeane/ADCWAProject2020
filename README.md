@@ -9,6 +9,16 @@ Advanced data centric web applications project 2020. For this project I used Spr
 * select * from <DatabaseNameHere> - displays information in a specific table
 * insert into <TableName> values (1, "John"); - inserts specific data into the table
 * date varchar(255) - insert a date into a table
+
+### Technologies used
+1) Eclipse IDE
+2) Google Chrome
+3) Java
+4) Spring Boot
+5) Maven MVC
+6) HTML
+7) CSS
+8) Tomcat Server port 8081
   
 ### Run
 1) Clone repo
