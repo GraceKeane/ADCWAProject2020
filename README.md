@@ -1,5 +1,5 @@
 ## Introduction
-Advanced data centric web applications project 2020. For this project I used Spring Boot MVC, java, HTML and CSS to implement an order tracking system. It allows a logged-in user to manage orders of products for customers.
+Advanced data centric web applications project 2020. For this project I used Spring Boot MVC, java, HTML and CSS to implement an order tracking system. It allows users to view all products, orders ect and allows correct additional information to be added to the database. I have added functions to this application which allows for security to be set and followed throughout.
 
 ### Useful mySQL Commands
 * show databases; - displays all databases created
