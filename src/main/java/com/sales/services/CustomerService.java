@@ -21,5 +21,12 @@ public class CustomerService {
 		return (ArrayList<Customer>) cr.findAll();
 		
 	}
+	
+	public void saveCustomer(Customer c) {
+		cr.save(c);
+		
+		System.out.printf("Product saved");
+    		
+  	}
 
 }

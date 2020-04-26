@@ -32,8 +32,7 @@ public class Product {
 	@NotNull
 	@Column(name="stocknumber")
 	// Min - Does not allow the stock number to be less than 0.
-	//@PositiveOrZero(message = "You cannot have negative numbers of children.") 
-	@Min (value = 0, message = "Stock number can not be below 0")
+	@Min(0)
 	private int stocknumber;
 	
 	//@OneToMany(mappedBy="prod")
