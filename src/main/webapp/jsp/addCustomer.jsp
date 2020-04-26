@@ -5,19 +5,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add product</title>
+<title>Add Customer</title>
 </head>
 <body>
-<form:form modelAttribute="product">
+<form:form modelAttribute="customer">
   <table>
   	<tr>
-  		<td> Product name: </td>
-  		<td><form:input path="productname" required="true"></form:input></td>
+  		<td> Customer name: </td>
+  		<td><form:input path="customername" required="true"></form:input></td>
   	</tr>
-  	<tr>
-  		<td> Stock number: </td>
-  		<td><form:input path="stocknumber" InvalidMessage="Error"/></td>
-  	</tr>
+  
   	<tr>
   		<td colspan="2">
   			<input type="submit" value="Add"/>

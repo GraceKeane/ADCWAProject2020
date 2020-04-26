@@ -74,19 +74,4 @@ public class ProductController {
 	// Security
 	// Security - checking if the product stock number is greater or equal to 0
 	
-	/*@GetMapping("/")
-	public String showForm(Product product) {
-		return "form";
-	}
-	
-	@PostMapping("/")
-	public String checkProductInfo(@Valid Product product, BindingResult bindingResult) {
-
-		if (bindingResult.hasErrors()) {
-			return "form";
-		}
-
-		return "redirect:/getProducts";
-	}*/
-	
 }
