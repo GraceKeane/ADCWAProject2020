@@ -19,6 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
           .antMatchers("/getProducts.html").access("hasRole('USER')")
+
           .antMatchers("/admin/**").hasRole("ADMIN")
           .and()
           // some more method calls
