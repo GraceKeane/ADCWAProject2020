@@ -23,6 +23,11 @@
   		</td>
   	</tr>
   	
+  	<tr>
+  		<td> Quantity </td>
+  		<td><form:input path="qty" required="true"></form:input></td>
+  	</tr>
+  	
   	
   	<tr>
   		<td colspan="2">
