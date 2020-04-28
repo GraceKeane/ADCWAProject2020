@@ -11,6 +11,7 @@
 <h1>List of Orders</h1>
 <table>
   <tr>
+  	<th>Order-ID</th>
    	<th>Quantity</th>
    	<th>Order-Date</th>
    	<th>Customer-ID</th>
@@ -23,6 +24,7 @@
     <c:forEach items="${orders}" 
                 	 var="order">
       <tr> 
+      	<td>${order.oId}</td>
         <td>${order.qty}</td>
         <td>${order.orderDate}</td>
         <td>${order.cust.number}</td>
@@ -38,7 +40,7 @@
 	<td><a href="/index.html">Home</a></td>
 	<td><a href="/addOrder.html">Add Order</a></td>
 	<td><a href="/getProducts.html">List Products</a></td>
-	 <td><a href="/getOrders.html">List Orders</a></td>
+	<td><a href="/getOrders.html">List Orders</a></td>
 	<td><a href="/logout.html.html">Logout</a></td>
 </tr>
 </body>

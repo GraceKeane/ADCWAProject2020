@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sales.models.Order;
+import com.sales.models.Product;
 import com.sales.repositories.OrderRepo;
 
 
@@ -20,4 +21,11 @@ public class OrderService {
 		return (ArrayList<Order>) or.findAll();
 		
 	}
+	
+	public void saveOrder(Order o) {
+		or.save(o);
+		
+		System.out.printf("Order saved");
+    		
+  	}
 }

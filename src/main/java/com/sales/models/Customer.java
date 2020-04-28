@@ -1,12 +1,12 @@
 package com.sales.models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -24,9 +24,15 @@ public class Customer {
 	@NotBlank
 	private String customername;
 	
-	/*@OneToMany(mappedBy="cust")
+	//@OneToMany(mappedBy="prod")
+	//private List<Order> orders = new ArrayList<Order>();
+	
+	@OneToMany(targetEntity =Order.class, mappedBy="cust")
 	private List<Order> orders = new ArrayList<Order>();
-*/
+	
+//	@OneToMany(mappedBy="cust")
+//	private List<Order> orders = new ArrayList<Order>();
+
 	public Long getNumber() {
 		return number;
 	}
@@ -43,10 +49,16 @@ public class Customer {
 		this.customername = customername;
 	}
 
-	/*public List<Order> getOrders() {
+/*	public List<Order> getOrders() {
 		return orders;
 	}
+
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
-	}*/	
+	}
+	*/
+	
+	
+
+	
 }
