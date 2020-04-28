@@ -13,19 +13,25 @@
 <table>
   <tr>
    <th>Name</th>
-   <th>Stock-name</th>
+   <th>Customer-name</th>
+   <th>Order-ID</th>
+   <th>Quantity</th>
+   <th>Product-ID</th>
+   <th>Description</th>
+   
   </tr>
   
   <tr>
-    <c:forEach items="${customers}" 
+    <c:forEach items="${customers}"
                 	 var="customer">
        <tr> 
         <td>${customer.number}</td>
         <td>${customer.customername}</td>
+        
+        
       </tr>
-      
-   </c:forEach>
- </tr>
+       </c:forEach>
+     </tr>
 </table>
 
 <tr>

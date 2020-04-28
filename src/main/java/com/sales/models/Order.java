@@ -31,6 +31,7 @@ public class Order {
 	@ManyToOne
 	@JoinColumn(name="pId")
 	private Product prod;
+	
 
 	public Long getoId() {
 		return oId;
