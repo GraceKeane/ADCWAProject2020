@@ -24,14 +24,8 @@ public class Customer {
 	@NotBlank
 	private String customername;
 	
-	//@OneToMany(mappedBy="prod")
-	//private List<Order> orders = new ArrayList<Order>();
-	
-	@OneToMany(targetEntity =Order.class, mappedBy="cust")
+	@OneToMany(mappedBy="cust")
 	private List<Order> orders = new ArrayList<Order>();
-	
-//	@OneToMany(mappedBy="cust")
-//	private List<Order> orders = new ArrayList<Order>();
 
 	public Long getNumber() {
 		return number;
@@ -49,16 +43,12 @@ public class Customer {
 		this.customername = customername;
 	}
 
-/*	public List<Order> getOrders() {
+	public List<Order> getOrders() {
 		return orders;
 	}
 
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
 	}
-	*/
-	
-	
-
 	
 }
