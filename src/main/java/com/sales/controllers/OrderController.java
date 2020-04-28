@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sales.models.Customer;
 import com.sales.models.Order;
-import com.sales.models.Product;
+import com.sales.services.CustomerService;
 import com.sales.services.OrderService;
 import com.sales.services.ProductService;
 
@@ -22,6 +22,12 @@ public class OrderController{
 	
 	@Autowired
 	OrderService os;
+	
+	@Autowired 
+	ProductService ps;
+	
+	@Autowired
+	CustomerService cs;
 	
 	@RequestMapping(value = "/getOrders.html")
 	  public String getOrders(Model model) {
@@ -34,23 +40,35 @@ public class OrderController{
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	
-		// Adding an order
+		// Adding an order - customer name
 	
 		// Drop down list got person name
-		@RequestMapping(value = "/addOrder.html")
+		@RequestMapping(value = "/addOrder.html", method=RequestMethod.GET)
 		public String addOrder(Model model) {	
 			
-			Map<Integer, String> orders =
-					new LinkedHashMap<Integer, String>();
-					
-					orders.put(1,"John");
-					orders.put(2,"Tom");
-					orders.put(3,"Fred");	
-					model.addAttribute("orderList", orders);
+			ArrayList<Customer> customers = cs.getAllCustomers();
 			
+			Map<Long, String> customerList =
+					new LinkedHashMap<Long, String>();
+					
+			for (Customer c : customers) {
+				customerList.put(c.getNumber(), c.getCustomername());
+			
+			}
+			
+			
+			
+			
+			model.addAttribute("customerList", customerList);
 			Order o = new Order();
 			model.addAttribute("order", o);
-			return "addOrder";
+			return "addOrder";			
+		}
+		
+		@RequestMapping(value="/addOrder.html", method=RequestMethod.POST)
+		public String addOrderPOST(@ModelAttribute("order")Order o) {
+			os.saveOrder(o);
+			return "redirect:getOrders.html";
 		}
 }
 	
