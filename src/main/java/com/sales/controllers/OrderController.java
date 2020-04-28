@@ -41,47 +41,37 @@ public class OrderController{
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	
-		// Adding an order - customer name
-	
-		// Drop down list for person name
+		// Adding an order
 		@RequestMapping(value = "/addOrder.html", method=RequestMethod.GET)
 		public String addOrder(Model model) {	
 			
+			// Drop down list for person name
 			ArrayList<Customer> customers = cs.getAllCustomers();
-			
-			Map<Long, String> customerList =
-					new LinkedHashMap<Long, String>();
-					
+			Map<Long, String> customerList = new LinkedHashMap<Long, String>();	
 			for (Customer c : customers) {
 				customerList.put(c.getNumber(), c.getCustomername());
-			
 			}
 			model.addAttribute("customerList", customerList);
+			Customer c = new Customer();
 			
 			
 			// Drop down list for product name 
 			ArrayList<Product> products = ps.getAllProducts();
-			
-			Map<Long, String> productList =
-					new LinkedHashMap<Long, String>();
-					
+			Map<Long, String> productList = new LinkedHashMap<Long, String>();
 			for (Product p : products) {
 				productList.put(p.getNumber(), p.getProductname());
-			
 			}
 			model.addAttribute("productList", productList);
+			Product p = new Product();
+			
 			
 			
 			// Qty input
 			ArrayList<Order> orders = os.getAllOrders();
-
-			Map<Long, Integer> getOrders =
-			new LinkedHashMap<Long, Integer>();
-					
+			Map<Long, Integer> getOrders = new LinkedHashMap<Long, Integer>();
 			for (Order o : orders) {
 			getOrders.put(o.getoId(), o.getQty());
 			}
-					
 			model.addAttribute("getOrders", orders);			
 					
 			Order o = new Order();

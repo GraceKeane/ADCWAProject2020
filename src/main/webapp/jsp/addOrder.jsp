@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@
 <body>
 <form:form modelAttribute="order">
   <table>
-  	<tr>
+    <tr>
   		<td>Customer name</td>
   			<td><form:select path="cust.customername" items="${customerList}"></form:select></td>
   		</td>

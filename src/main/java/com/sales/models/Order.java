@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="ORDERS")
@@ -18,6 +19,7 @@ public class Order {
 	private Long oId;
 	
 	@Min(1)
+	@NotNull
 	@Column(name="QTY")
 	private int qty;
 	
