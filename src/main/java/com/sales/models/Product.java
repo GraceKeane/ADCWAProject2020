@@ -34,9 +34,9 @@ public class Product {
 	@Min(value = 0)
 	private int stocknumber;
 	
-	/*@OneToMany(mappedBy="prod")
+	@OneToMany(mappedBy="prod")
 	private List<Order> ordersForProduct = new ArrayList<Order>();
-	*/
+	
 	// Getters & setters
 	public Long getNumber() {
 		return number;
