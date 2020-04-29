@@ -18,7 +18,7 @@
        	</tr>
        
        	<tr>
- 			<th><b>${customer.customername}'s Orders</b></th>
+ 			<td><b>${customer.customername}'s Orders</b></td>
  	   	</tr>
  	   
  	   	<tr> 

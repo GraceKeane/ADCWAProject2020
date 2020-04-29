@@ -9,17 +9,17 @@
 <title>Add Order</title>
 </head>
 <body>
-<form:form modelAttribute="order" action="submitForm" >
+<form:form modelAttribute="orders">
   <table>
-    <tr>
+      <tr>
   		<td>Customer name</td>
-  			<td><form:select path="cust.customername" items="${customerList}"></form:select></td>
+  			<td><form:select path="cust.customername" items="${list1}"></form:select></td>
   		</td>
   	</tr>
   	
   	<tr>
   		<td>Product name</td>
-  			<td><form:select path="prod.productname" items="${productList}"></form:select></td>
+  			<td><form:select path="prod.productname" items="${list2}"></form:select></td>
   		</td>
   	</tr>
   	
