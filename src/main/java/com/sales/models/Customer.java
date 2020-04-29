@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="customers")
@@ -21,7 +22,7 @@ public class Customer {
 	private Long number;
 
 	@Column(name="customername")
-	@NotBlank
+	@NotEmpty
 	private String customername;
 	
 	@OneToMany(mappedBy="cust")

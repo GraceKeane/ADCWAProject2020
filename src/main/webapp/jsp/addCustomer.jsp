@@ -12,7 +12,9 @@
   <table>
   	<tr>
   		<td> Customer name: </td>
-  		<td><form:input path="customername" required="true"></form:input></td>
+  		<td><form:input path="customername"></form:input></td>
+  		<td><form:errors path="customername"></form:errors></td>
+  		
   	</tr>
   
   	<tr>

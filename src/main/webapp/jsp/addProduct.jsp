@@ -12,11 +12,14 @@
   <table>
   	<tr>
   		<td> Product name: </td>
-  		<td><form:input path="productname" required="true"></form:input></td>
+  		<td><form:input path="productname"></form:input></td>
+  		<td><form:errors path="productname"></form:errors></td>
+  		
   	</tr>
   	<tr>
   		<td> Stock number: </td>
-  		<td><form:input path="stocknumber" InvalidMessage="Error"/></td>
+  		<td><form:input path="stocknumber"/></td>
+  		<td><form:errors path="stocknumber"></form:errors></td>
   	</tr>
   	<tr>
   		<td colspan="2">

@@ -14,6 +14,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="products")
@@ -24,10 +27,11 @@ public class Product {
 	private Long number;
 	
 	@Column(name="productname")
+	@NotEmpty
 	private String productname;
 	
 	@Column(name="stocknumber")
-	@Min(0)
+	@Min(value = 0)
 	private int stocknumber;
 	
 	/*@OneToMany(mappedBy="prod")
