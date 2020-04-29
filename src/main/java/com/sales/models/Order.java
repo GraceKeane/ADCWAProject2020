@@ -18,9 +18,9 @@ public class Order {
 	@Column(name="OID")
 	private Long oId;
 	
-	@Min(1)
 	@NotNull
 	@Column(name="QTY")
+	@Min(value = 1)
 	private int qty;
 	
 	@Column(name="ORDDATE")

@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -53,7 +56,7 @@ public class OrderController{
 			}
 			model.addAttribute("customerList", customerList);
 			Customer c = new Customer();
-			
+		
 			
 			// Drop down list for product name 
 			ArrayList<Product> products = ps.getAllProducts();
@@ -63,8 +66,6 @@ public class OrderController{
 			}
 			model.addAttribute("productList", productList);
 			Product p = new Product();
-			
-			
 			
 			// Qty input
 			ArrayList<Order> orders = os.getAllOrders();
@@ -76,14 +77,20 @@ public class OrderController{
 					
 			Order o = new Order();
 			model.addAttribute("order", o);
-			return "addOrder";	
+			
+			return "addOrder";
+			
 		}
 		
+
+		
 		@RequestMapping(value="/addOrder.html", method=RequestMethod.POST)
-		public String addOrderPOST(@ModelAttribute("order")Order o) {
+		public String addOrderPOST(@Valid @ModelAttribute("order")Order o,  BindingResult result) {
+			if (result.hasErrors()) {
+				return "addOrder";
+			}
 			os.saveOrder(o);
-			
-			
+				
 			return "redirect:getOrders.html";
 		}
 		

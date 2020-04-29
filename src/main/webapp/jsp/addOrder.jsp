@@ -9,7 +9,7 @@
 <title>Add Order</title>
 </head>
 <body>
-<form:form modelAttribute="order">
+<form:form modelAttribute="order" action="submitForm" >
   <table>
     <tr>
   		<td>Customer name</td>
@@ -25,7 +25,9 @@
   	
   	<tr>
   		<td> Quantity </td>
-  		<td><form:input path="qty" required="true"></form:input></td>
+  		<td><form:input path="qty"></form:input></td>
+  		<td><form:errors path="qty"></form:errors></td>
+  		
   	</tr>
   	
   	

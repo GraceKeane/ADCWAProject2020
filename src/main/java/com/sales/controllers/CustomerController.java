@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -53,9 +56,16 @@ public class CustomerController {
 		return "addCustomer";
 		}
 		
+		
 		@RequestMapping(value = "/addCustomer.html", method=RequestMethod.POST)
-		public String addCustomerPOST(@ModelAttribute("customer") Customer c) {
+		public String addCustomerPOST(@Valid @ModelAttribute("customer") Customer c, BindingResult result) {
+		
+		if (result.hasErrors()) {
+			return "addCustomer";
+		}
+			
 		cs.saveCustomer(c);
+		
 		return "redirect:getCustomers.html";
 		
 		}

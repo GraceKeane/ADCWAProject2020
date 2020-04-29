@@ -45,9 +45,6 @@ public class ProductController {
 		
 		ArrayList<Product> products = ps.getAllProducts();
 		
-		
-		
-		
 		Map<String, Integer> getProducts =
 				new LinkedHashMap<String, Integer>();
 		
@@ -62,16 +59,21 @@ public class ProductController {
 		return "addProduct";
 	}
 	
+	
+	
+	// Security
 	@RequestMapping(value = "/addProduct.html", method=RequestMethod.POST)
-	public String addProductPOST(@ModelAttribute("product") Product p) {
+	public String addProductPOST(@Valid @ModelAttribute("product") Product p, BindingResult result) {
+		
+		if (result.hasErrors()) {
+			return "addProduct";
+		}
+		
+		
 		ps.saveProduct(p);
+		
+		
 		return "redirect:getProducts.html";
 		
 	}
-	
-	////////////////////////////////////////////////////////////////////////////////////////////
-	
-	// Security
-	// Security - checking if the product stock number is greater or equal to 0
-	
 }
