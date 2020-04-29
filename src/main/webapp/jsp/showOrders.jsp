@@ -7,7 +7,6 @@
 <meta charset="ISO-8859-1">
 <title>Orders</title>
 </head>
-<body>
 <h1>List of Orders</h1>
 <table>
   <tr>
@@ -29,8 +28,8 @@
         <td>${order.orderDate}</td>
         <td>${order.cust.number}</td>
         <td>${order.cust.customername}</td>
-        <th>${order.prod.number}</th>
-        <th>${order.prod.productname}</th>
+        <td>${order.prod.number}</td>
+        <td>${order.prod.productname}</td>
       </tr>
     </c:forEach>
   </tr>

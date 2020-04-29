@@ -1,6 +1,7 @@
 package com.sales.controllers;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -46,38 +47,31 @@ public class OrderController{
 	
 		// Adding an order
 		@RequestMapping(value = "/addOrder.html", method=RequestMethod.GET)
-		public String addOrder(Model model) {	
+		public String addOrderGET(Model model) {	
 			
-			// Drop down list for person name
+			/// Drop down list for person name
 			ArrayList<Customer> customers = cs.getAllCustomers();
-			Map<Long, String> customerList = new LinkedHashMap<Long, String>();	
+			Map<Long, String> list1 = new HashMap<Long, String>();	
 			for (Customer c : customers) {
-				customerList.put(c.getNumber(), c.getCustomername());
+				list1.put(c.getNumber(), c.getCustomername());
 			}
-			model.addAttribute("customerList", customerList);
-			Customer c = new Customer();
-		
 			
-			// Drop down list for product name 
+			model.addAttribute("list1", list1);
+			
+			
+			
+			/// Drop down list for product description 
 			ArrayList<Product> products = ps.getAllProducts();
-			Map<Long, String> productList = new LinkedHashMap<Long, String>();
+			Map<Long, String> list2 = new HashMap<Long, String>();
 			for (Product p : products) {
-				productList.put(p.getNumber(), p.getProductname());
+				list2.put(p.getNumber(), p.getProductname());
 			}
-			model.addAttribute("productList", productList);
-			Product p = new Product();
+			model.addAttribute("list2", list2);			
 			
-			// Qty input
-			ArrayList<Order> orders = os.getAllOrders();
-			Map<Long, Integer> getOrders = new LinkedHashMap<Long, Integer>();
-			for (Order o : orders) {
-			getOrders.put(o.getoId(), o.getQty());
-			}
-			model.addAttribute("getOrders", orders);			
-					
+		
 			Order o = new Order();
-			model.addAttribute("order", o);
-			
+			model.addAttribute("orders", o);
+				
 			return "addOrder";
 			
 		}
@@ -85,16 +79,15 @@ public class OrderController{
 
 		
 		@RequestMapping(value="/addOrder.html", method=RequestMethod.POST)
-		public String addOrderPOST(@Valid @ModelAttribute("order")Order o,  BindingResult result) {
+		public String addOrderPOST(@Valid @ModelAttribute("orders")Order orders,  BindingResult result) {
 			if (result.hasErrors()) {
 				return "addOrder";
 			}
-			os.saveOrder(o);
-				
+	
+			//os.saveOrder(order);
+		
 			return "redirect:getOrders.html";
-		}
-		
-		
+		}	
 }
 	
 
