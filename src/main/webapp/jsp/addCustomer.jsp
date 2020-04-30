@@ -7,6 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>Add Customer</title>
 </head>
+<h1>Add a customer</h1>
 <body>
 <form:form modelAttribute="customer">
   <table>
@@ -24,7 +25,7 @@
   	</tr> 		
 </table>
 </form:form>
-
+<br></br>
 <tr>
 	<td><a href="/index.html">Home</a></td>
 	<td><a href="/getProducts.html">List Products</a></td>
