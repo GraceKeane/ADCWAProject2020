@@ -35,7 +35,7 @@
 		<td><a href="/addProduct.html">Add Product</a></td>
 		<td><a href="/getProducts.html">List Products</a></td>
 		<td><a href="/getOrders.html">List Orders</a></td>	
-		<td><a href="/Logout.html"> Logout</a></td>	
+		<td><a href="/logout">Logout</a></td>	
 		
 	</tr>
 </body>

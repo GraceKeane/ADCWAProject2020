@@ -66,28 +66,26 @@ public class OrderController{
 			for (Product p : products) {
 				list2.put(p.getNumber(), p.getProductname());
 			}
-			model.addAttribute("list2", list2);			
+			model.addAttribute("list2", list2);	
 			
 		
 			Order o = new Order();
-			model.addAttribute("orders", o);
+			model.addAttribute("order", o);
 				
 			return "addOrder";
 			
 		}
 		
-
-		
 		@RequestMapping(value="/addOrder.html", method=RequestMethod.POST)
-		public String addOrderPOST(@Valid @ModelAttribute("orders")Order orders,  BindingResult result) {
+		public String addOrderPOST(@Valid @ModelAttribute("order")Order o,  BindingResult result) {
 			if (result.hasErrors()) {
+
 				return "addOrder";
 			}
-	
-			//os.saveOrder(order);
-		
+			
 			return "redirect:getOrders.html";
-		}	
+		}
+		
 }
 	
 

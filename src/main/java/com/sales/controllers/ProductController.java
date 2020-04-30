@@ -69,11 +69,10 @@ public class ProductController {
 			return "addProduct";
 		}
 		
-		
 		ps.saveProduct(p);
-		
-		
+	
 		return "redirect:getProducts.html";
 		
 	}
+	
 }

@@ -45,8 +45,8 @@
 	<td><a href="/index.html">Home</a></td>
 	<td><a href="/addCustomer.html">Add Customer</a></td>
 	<td><a href="/getProducts.html">List Products</a></td>
-	 <td><a href="/getOrders.html">List Orders</a></td>
-	<td><a href="/logout.html.html">Logout</a></td>
+	<td><a href="/getOrders.html">List Orders</a></td>
+	<td><a href="/logout">Logout</a></td>	
 </tr>
 </body>
 </html>
