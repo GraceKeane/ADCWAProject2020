@@ -9,7 +9,7 @@
 <title>Add Order</title>
 </head>
 <body>
-<form:form modelAttribute="orders">
+<form:form modelAttribute="order">
   <table>
       <tr>
   		<td>Customer name</td>
@@ -33,7 +33,7 @@
   	
   	<tr>
   		<td colspan="2">
-  			<input type="submit" value="Order"/>
+  			<input type="submit" value="Add"/>
   		</td>
   	</tr> 
   	

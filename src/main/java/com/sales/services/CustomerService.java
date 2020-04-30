@@ -25,7 +25,7 @@ public class CustomerService {
 	public void saveCustomer(Customer c) {
 		cr.save(c);
 		
-		System.out.printf("Product saved");
+		System.out.printf("Customer saved");
     		
   	}
 
