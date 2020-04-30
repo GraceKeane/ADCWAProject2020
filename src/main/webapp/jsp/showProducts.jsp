@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/style.css">
 <meta charset="ISO-8859-1">
 <title>Products</title>
 </head>
@@ -28,7 +29,7 @@
   
   </tr>
 </table>
-
+<br></br>
 	<tr>
 	
 		<td><a href="/index.html">Home</a></td>

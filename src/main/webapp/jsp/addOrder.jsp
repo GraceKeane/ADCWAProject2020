@@ -8,6 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Add Order</title>
 </head>
+<h1>Add an order</h1>
 <body>
 <form:form modelAttribute="order">
   <table>
@@ -39,7 +40,7 @@
   	
 </table>
 </form:form>
-
+<br></br>
 <tr>
 	<td><a href="/index.html">Home</a></td>
 	<td><a href="/getProducts.html">List Products</a></td>

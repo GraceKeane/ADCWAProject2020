@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/style.css">
 <meta charset="ISO-8859-1">
 <title>Customers</title>
 </head>
@@ -40,7 +41,7 @@
      	</tr>
      </c:forEach>
 </table>
-
+<br></br>
 <tr>
 	<td><a href="/index.html">Home</a></td>
 	<td><a href="/addCustomer.html">Add Customer</a></td>
