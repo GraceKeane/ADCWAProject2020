@@ -3,10 +3,10 @@ Advanced data centric web applications project 2020. For this project I used Spr
 
 ## Arcitecture
 *The spring boot applications contains & allows...*
-* Data to be read from a database
-* Info from database to be displayed on the web in a table format
-* Data to be added to a database using spring forms
-* Spring error messages to be displayed
+* Data that can be read from a database
+* Info from database that can be displayed on the web in a table format
+* Data added to a database using spring forms
+* Spring error messages can be displayed
 * Spring security throughout the application
 * Table joins
 * Table headers
