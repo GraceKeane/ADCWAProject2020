@@ -22,7 +22,7 @@ public class OrderService {
 		
 	}
 	
-	public void saveOrder(Order o) {
+	public void save(Order o) {
 		or.save(o);
 		
 		System.out.printf("Order saved");

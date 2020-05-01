@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.sales.models.Customer;
 import com.sales.models.Order;
 import com.sales.models.Product;
+import com.sales.repositories.OrderRepo;
 import com.sales.services.CustomerService;
 import com.sales.services.OrderService;
 import com.sales.services.ProductService;
@@ -34,8 +35,13 @@ public class OrderController{
 	@Autowired
 	CustomerService cs;
 	
-	@RequestMapping(value = "/getOrders.html")
-	  public String getOrders(Model model) {
+	@Autowired
+	OrderRepo or;
+	
+	
+	
+	@RequestMapping(value = "/getOrders.html", method=RequestMethod.GET)
+	  public String getOrdersGET(Model model) {
 		ArrayList<Order> orders = os.getAllOrders();
 		System.out.println("Order Size = " + orders.size());
 		model.addAttribute("orders", orders);
@@ -59,7 +65,6 @@ public class OrderController{
 			model.addAttribute("list1", list1);
 			
 			
-			
 			/// Drop down list for product description 
 			ArrayList<Product> products = ps.getAllProducts();
 			Map<Long, String> list2 = new HashMap<Long, String>();
@@ -67,25 +72,26 @@ public class OrderController{
 				list2.put(p.getNumber(), p.getProductname());
 			}
 			model.addAttribute("list2", list2);	
-			
 		
 			Order o = new Order();
 			model.addAttribute("order", o);
 				
-			return "addOrder";
-			
+			return "addOrder";	
 		}
 		
 		@RequestMapping(value="/addOrder.html", method=RequestMethod.POST)
 		public String addOrderPOST(@Valid @ModelAttribute("order")Order o,  BindingResult result) {
+			//
+			
+						
 			if (result.hasErrors()) {
-
 				return "addOrder";
 			}
-			
+				
 			return "redirect:getOrders.html";
 		}
-		
 }
+		
+
 	
 
