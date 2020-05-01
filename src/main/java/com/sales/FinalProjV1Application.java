@@ -1,7 +1,7 @@
-// Grace Keane - 3rd year - Software Development  RUN ON PORT 8081
-// Advanced data centric web applications
-// GitHub Repository - regularly commit changes @https://github.com/GraceKeane/ADCWAProject2020
-
+// Grace Keane - 3rd year - Software Development -  RUN ON PORT 8081
+// Advanced Data Centric Web Applications
+// GitHub Repository - regularly commits & changes @https://github.com/GraceKeane/ADCWAProject2020
+// Runner class
 
 package com.sales;
 

@@ -26,48 +26,49 @@ public class CustomerController {
 	@Autowired
 	CustomerService cs;
 		
+	// Method for finding all customers in the database & 
+	// displaying them in "/getCustomers.html" 
 	@RequestMapping(value = "/getCustomers.html")
 	  public String getCustomers(Model model) {
 		ArrayList<Customer> customers = cs.getAllCustomers();
 		System.out.println("Customer Size = " + customers.size());
 		model.addAttribute("customers", customers);
 	    return "showCustomers";
-	  }
-	
-//////////////////////////////////////////////////////////////////////////////////////////////
-	
-		// Adding a customer
-		@RequestMapping(value = "/addCustomer.html", method=RequestMethod.GET)
-		public String addCustomerGET(Model model) {
+	 }
 		
+	// Adding a customer to the getCustomers.html page & database
+	@RequestMapping(value = "/addCustomer.html", method=RequestMethod.GET)
+	public String addCustomerGET(Model model) {
+		// Getting customer from the database	
 		ArrayList<Customer> customers = cs.getAllCustomers();
-		
+		// Create a getCustomer map	
 		Map<String, Long> getCustomers =
 		new LinkedHashMap<String, Long>();
-		
+		// Adding customer name and number to the map	
 		for (Customer c : customers) {
 		getCustomers.put(c.getCustomername(), c.getNumber());
 		}
-		
+		// Add to map
 		model.addAttribute("getCustomers", customers);
-		
+		// Creating a new customer
 		Customer c = new Customer();
 		model.addAttribute("customer", c);
 		return "addCustomer";
-		}
+	}
 		
-		
-		@RequestMapping(value = "/addCustomer.html", method=RequestMethod.POST)
+	// When data is submitted a post request is sent to the browser
+	@RequestMapping(value = "/addCustomer.html", method=RequestMethod.POST)
+		// @Valid & BindingResult -> checks whether there is errors or not in submission form
 		public String addCustomerPOST(@Valid @ModelAttribute("customer") Customer c, BindingResult result) {
 		
-		if (result.hasErrors()) {
-			return "addCustomer";
-		}
+			// If entered data has errors user will be directed to the original addCustomer page
+			if (result.hasErrors()) {
+				return "addCustomer";
+			}
 			
-		cs.saveCustomer(c);
-		
+			// Else -> customer is saved and info is displayed in the "getCustomers.html page" 
+			cs.saveCustomer(c);	
 		return "redirect:getCustomers.html";
-		
+			
 		}
-
-}
+	}

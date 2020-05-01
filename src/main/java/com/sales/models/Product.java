@@ -39,7 +39,6 @@ public class Product {
 	@OneToMany(mappedBy="prod")
 	private List<Order> ordersForProduct = new ArrayList<Order>();
 	
-	// Getters & setters
 	public Long getNumber() {
 		return number;
 	}
@@ -63,15 +62,4 @@ public class Product {
 	public void setStocknumber(int stocknumber) {
 		this.stocknumber = stocknumber;
 	}
-
-	/*public List<Order> getOrdersForProduct() {
-		return ordersForProduct;
-	}
-
-	public void setOrdersForProduct(List<Order> ordersForProduct) {
-		this.ordersForProduct = ordersForProduct;
-	}*/
-
-	
-
 }
