@@ -48,10 +48,8 @@ public class OrderController{
 	    return "showOrders";
 
 	}
-	
-	////////////////////////////////////////////////////////////////////////////////////////////////
-	
-	// Adding an order to the getOrders.html page & database
+		
+		// Adding an order to the getOrders.html page & database
 
 		@RequestMapping(value = "/addOrder.html", method=RequestMethod.GET)
 		public String addOrderGET(Model model) {	
