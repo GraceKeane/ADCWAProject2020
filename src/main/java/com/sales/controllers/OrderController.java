@@ -84,11 +84,14 @@ public class OrderController{
 			//
 			
 						
-			if (result.hasErrors()) {
+			if (result.hasFieldErrors()) {
 				return "addOrder";
 			}
-				
-			return "redirect:getOrders.html";
+			else {
+				os.save(o);
+				return "redirect:getOrders.html";
+			}
+			
 		}
 }
 		
