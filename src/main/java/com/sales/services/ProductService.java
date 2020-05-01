@@ -15,11 +15,13 @@ public class ProductService {
 	@Autowired
 	ProductRepo pr;
 	
+	// Find all products from the database
 	public ArrayList<Product> getAllProducts() {
 		return (ArrayList<Product>) pr.findAll();
 		
 	}
 	
+	// Saving a product to the database & screen 
 	public void saveProduct(Product p) {
 		pr.save(p);
 		

@@ -17,14 +17,16 @@ public class CustomerService {
 	@Autowired
 	CustomerRepo cr;
 	
+	// Finding all customers in the database
 	public ArrayList<Customer> getAllCustomers() {
 		return (ArrayList<Customer>) cr.findAll();
 		
 	}
 	
+	// Saving a customer to the database & screen  
 	public void saveCustomer(Customer c) {
 		cr.save(c);
-		
+		// Printing out info to console when data is officially saved
 		System.out.printf("Customer saved");
     		
   	}

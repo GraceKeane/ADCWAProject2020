@@ -12,20 +12,25 @@
 
  <c:forEach items="${orders}" 
                 	 var="order">
+ 
+ <!-- Heading include order ID -->
  <h3>${order.oId}</h3>
-<table>
+ 
+	<table>
 
-  <tr>
-   	<th>Quantity</th>
-   	<th>Order-Date</th>
-   	<th>Customer-ID</th>
-   	<th>Customer-Name</th>
-   	<th>Product-ID</th>
-   	<th>Description</th>
+  	<tr>
+  		<!-- Table headers -->
+   		<th>Quantity</th>
+   		<th>Order-Date</th>
+   		<th>Customer-ID</th>
+   		<th>Customer-Name</th>
+   		<th>Product-ID</th>
+   		<th>Description</th>
+  	</tr>
   
-  </tr>
-  
-      <tr> 
+     <tr> 
+      	<!-- Table information gotten from order, customer and product classes
+      	using joins -->
         <td>${order.qty}</td>
         <td>${order.orderDate}</td>
         <td>${order.cust.number}</td>
@@ -34,15 +39,17 @@
         <td>${order.prod.productname}</td>
       </tr>
    
-</table>
+	</table>
 </c:forEach>
 <br></br>
-<tr>
-	<td><a href="/index.html">Home</a></td>
-	<td><a href="/addOrder.html">Add Order</a></td>
-	<td><a href="/getProducts.html">List Products</a></td>
-	<td><a href="/getOrders.html">List Orders</a></td>
-	<td><a href="/logout">Logout</a></td>	
-</tr>
+
+	<tr>
+		<!-- Links -->
+		<td><a href="/index.html">Home</a></td>
+		<td><a href="/addOrder.html">Add Order</a></td>
+		<td><a href="/getProducts.html">List Products</a></td>
+		<td><a href="/getOrders.html">List Orders</a></td>
+		<td><a href="/logout">Logout</a></td>	
+	</tr>
 </body>
 </html>

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import com.sales.models.Product;
 
-// Repository class for product
 @Repository
 public interface ProductRepo extends CrudRepository <Product, Long> {
 

@@ -15,15 +15,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
+				// Setting pages listed to have security as user
 				.antMatchers("/getProducts.html", "/getCustomers.html","/getOrders.html","/addProduct.html","/addCustomer.html","/addOrder.html")	
 				.hasRole("USER")			
 				.and()
-			.formLogin()
-		.and()
-		.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");
+				.formLogin()
+				.and()
+				// Logout function 
+				.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");
 
 	}
 
+	// Setting username & password to "user", "user"
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth

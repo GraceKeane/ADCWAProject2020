@@ -10,27 +10,32 @@
 <h1>Add a customer</h1>
 <body>
 <form:form modelAttribute="customer">
-  <table>
-  	<tr>
-  		<td> Customer name: </td>
-  		<td><form:input path="customername"></form:input></td>
-  		<td><form:errors path="customername"></form:errors></td>
-  		
-  	</tr>
+ 	<table>
   
-  	<tr>
-  		<td colspan="2">
-  			<input type="submit" value="Add"/>
-  		</td>
-  	</tr> 		
-</table>
+  		<tr>
+  			<td> Customer name: </td>
+  			<!-- Taking in a name using the customername variable in the customer class -->
+  			<td><form:input path="customername"></form:input></td>
+  			<!-- Checking for errors, if no data input -> throws an error -->
+  			<td><form:errors path="customername"></form:errors></td>
+  		</tr>
+  
+  		<tr>
+  			<td colspan="2">
+  		  		<!-- Submit button -->
+  				<input type="submit" value="Add"/>
+  			</td>
+  		</tr> 		
+	</table>
 </form:form>
+
 <br></br>
-<tr>
-	<td><a href="/index.html">Home</a></td>
-	<td><a href="/getProducts.html">List Products</a></td>
-	<td><a href="/getOrders.html">List Orders</a></td>
-</tr> 
+	<tr>
+	  	<!-- Links -->
+		<td><a href="/index.html">Home</a></td>
+		<td><a href="/getProducts.html">List Products</a></td>
+		<td><a href="/getOrders.html">List Orders</a></td>
+	</tr> 
 	  
-</body>
+	</body>
 </html>
