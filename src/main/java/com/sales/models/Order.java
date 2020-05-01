@@ -23,9 +23,11 @@ public class Order {
 	@Min(value = 1)
 	private int qty;
 	
+	@GeneratedValue
 	@Column(name="ORDDATE")
 	private String orderDate;
 
+	@GeneratedValue
 	@ManyToOne
 	@JoinColumn(name="cId")
 	private Customer cust;
