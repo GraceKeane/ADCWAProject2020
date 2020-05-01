@@ -14,22 +14,18 @@
 <table>
 <tr>
     <c:forEach items="${customers}" var="customer">
-    	<tr> 
-       		<td><h2>${customer.number} ${customer.customername}</h2></td>
-       	</tr>
+    	<th> 
+       		<h2>${customer.number} ${customer.customername}</h2>
+       		<b>${customer.customername}'s Orders</b>
+       	</th>
        
-       	<tr>
- 			<td><b>${customer.customername}'s Orders</b></td>
- 	   	</tr>
- 	   
- 	   	<tr> 
+       <tr> 
  	    	<th><b>Order-ID</b></th>
    			<th><b>Quantity</b></th>
    			<th><b>Product-ID</b></th>
    			<th><b>Description</b></th>	
    		</tr>
-   			
-   		<tr>
+   	   			
    			 <c:forEach items="${customer.orders}" var="order">
    			 	<tr>
        				<td>${order.oId}</td>
@@ -38,7 +34,6 @@
         			<td>${order.prod.productname}</td>
       			</tr>
        		</c:forEach>
-     	</tr>
      </c:forEach>
 </table>
 <br></br>
